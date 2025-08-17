@@ -1,13 +1,22 @@
-import 'package:flutter/widgets.dart';
+import 'dart:ffi';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_v2/homepage/myhomepage.dart';
 
 void main() {
-  Person person = Person(name: 'Md. Abir Hasan', age: 27);
-  debugPrint(person.name);
+  runApp(ProviderScope(child: MyApp()));
 }
 
-class Person {
-  final String name;
-  final int age;
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  Person({required this.name, required this.age});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: MyHomePage());
+  }
 }
+
+final counterStateProvider = StateProvider<int>((ref) {
+  return 0;
+});
