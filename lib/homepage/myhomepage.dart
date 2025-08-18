@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_v2/main.dart';
 
 class MyHomePage extends ConsumerWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var value = ref.watch(counterStateProvider);

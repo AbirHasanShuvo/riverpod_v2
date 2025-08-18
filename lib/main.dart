@@ -1,9 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_v2/home/home_page.dart';
-import 'package:riverpod_v2/homepage/myhomepage.dart';
+import 'package:riverpod_v2/screens/selected_button.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -14,7 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SelectedButton(),
+    );
   }
 }
 
@@ -23,3 +24,4 @@ final counterStateProvider = StateProvider<int>((ref) {
 });
 
 //for basic operations call the class named MyHomePage
+//for http get data call the class named HomePage

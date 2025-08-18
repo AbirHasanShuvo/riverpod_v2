@@ -8,12 +8,12 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final _data = ref.watch(userDataProvider);
+    final data = ref.watch(userDataProvider);
     return Scaffold(
       appBar: AppBar(title: Text('Riverpod')),
-      body: _data.when(
-        data: (_data) {
-          List<UserModel> userlist = _data.map((e) => e).toList();
+      body: data.when(
+        data: (data) {
+          List<UserModel> userlist = data.map((e) => e).toList();
           return Column(
             children: [
               Expanded(
